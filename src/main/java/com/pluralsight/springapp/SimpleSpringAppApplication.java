@@ -17,6 +17,12 @@ public class SimpleSpringAppApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-	System.out.println(funkPopDAO.getFunkoByID());
+	//System.out.println(funkPopDAO.getFunkoByID());
+		FunkoPops myFavoriteFunkoPop = createFavoriteFunkoPop("MyFavoriteFunkoPop");
+		System.out.println("Created FunkoPop: " + myFavoriteFunkoPop.toString());
+	}
+	private FunkoPops createFavoriteFunkoPop(String name) {
+		FunkoPops favoriteFunkoPop = new FunkoPops();
+		return funkPopDAO.getFunkoByID(favoriteFunkoPop);
 	}
 }
